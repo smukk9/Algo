@@ -1,10 +1,13 @@
 package formStore;
-public class formStore implements Comparable<formStore> {
+
+
+public class formStore {
 
 	private int id;
 	private String datatype;
 	private boolean required;
 	private boolean visted;
+	private int priority;
 		
 	
 	public boolean isVisted() {
@@ -23,6 +26,7 @@ public class formStore implements Comparable<formStore> {
 		this.datatype= dt;
 		this.required = t;
 		this.visted = false;
+		this.priority = pt;
 		
 	}
 	
@@ -50,16 +54,18 @@ public class formStore implements Comparable<formStore> {
 		
 		return required;
 	}
-	
-	
-	
-	@Override
-	public int compareTo(formStore o) {
-		
-		return this.getId() > o.getId() ? 1:(this.getId()<o.getId()?-1:0);
-		
+	public int getPriority() {
+		return priority;
 	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+
 	
+	
+	
+
 	
 	
 	public boolean equals(Object o)
@@ -73,14 +79,6 @@ public class formStore implements Comparable<formStore> {
 		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -91,6 +89,9 @@ public class formStore implements Comparable<formStore> {
 		return result;
 	}
 
+	
+
+	
 
 
 	
